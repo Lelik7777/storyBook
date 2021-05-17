@@ -57,5 +57,5 @@ export const SelectControlled = () => {
         <option value="1">bread</option>
         <option value="2">milk</option>
         <option value="3">salt</option>
-    </select>
+    </select>;
 };
