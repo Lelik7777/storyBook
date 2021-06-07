@@ -1,34 +1,30 @@
 import React from 'react';
 
-type ItemsType2 = {
+export type ItemsType = {
     id: number;
-    title: string
+    title: string;
 }
 type According2Type = {
     title: string;
-    onClick: () => void;
-    items: ItemsType2[];
-    collapse: boolean;
+    items: ItemsType[];
 }
-export const According2: React.FC<According2Type> = ({title, onClick, items, collapse}) => {
+export const According2: React.FC<According2Type> = ({}) => {
     return <div>
-        <Header title={title} onClick={onClick}/>
-        {collapse && <Body items={items}/>}
+
     </div>
 }
-type HeaderType = {
+type Header = {
     title: string;
-    onClick: () => void;
+    onChange: () => void;
 }
-const Header: React.FC<HeaderType> = ({title, onClick}) => {
-    const changeCollapse = () => onClick();
-    return <h2 onClick={changeCollapse}>{title}</h2>
+const Header: React.FC<Header> = ({title, onChange}) => {
+    const accord = () =>
+        onChange();
+    return <h2 onClick={accord}>{title}</h2>
 }
-type BodyType = {
-    items: ItemsType2[];
-}
-const Body: React.FC<BodyType> = ({items}) => {
-    return <>
-        {items.map(i => <div>{i.title}</div>)}
-    </>
+type Body = {}
+const Body: React.FC<Body> = ({}) => {
+    return <div>
+
+    </div>
 }
